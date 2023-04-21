@@ -1,0 +1,129 @@
+{% spaceless %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="ru" />
+<link rel="stylesheet" type="text/css" href="/static/css/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/static/css/print.css" media="print" />
+<!--[if lt IE 8]>
+<link rel="stylesheet" type="text/css" href="/static/css/ie.css" media="screen, projection" />
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/form.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/styles.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/pager.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/extra.css" />
+<title>{% block tag_title_full %}{% block tag_title %}Стихи{% endblock %} - Библиотека Поэзии{% endblock %}</title>
+<meta name="description" content="{% block tag_description %}Наш проект дарит возможность всем поэтам, публиковать и обсуждать произведения современной поэзии.{% endblock %}" />
+<meta name="keywords" content="{% block tag_keywords %}стихи, стихотворение, поэзия, поэт, поэтический, лирика, автор, литература, творчество, сборник{% endblock %}" />
+
+{% if not debug %}
+{% comment %}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-3101972-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-3101972-4');
+</script>
+{% endcomment %}
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+ 
+    ym(91915195, "init", {
+         clickmap:true,
+         trackLinks:true,
+         accurateTrackBounce:true,
+         webvisor:true
+    });
+ </script>
+ <noscript><div><img src="https://mc.yandex.ru/watch/91915195" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+ <!-- /Yandex.Metrika counter -->
+{% comment %} <script data-ad-client="ca-pub-6122322096877385" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> {% endcomment %}
+{% endif %}
+</head>
+
+<body>
+<div class="container" id="page">
+
+    {% block breadcrumbs_full %}
+    <div class="breadcrumbs">{% block breadcrumbs %}{% endblock %}</div>
+    {% endblock %}
+
+    <div class="container">
+        <div class="span-19 borderRight">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message|safe }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        
+            <div id="content">
+                {% block pinned_news %}
+                    {% for item in pinned_news %}
+                    <div class="news_pinned">
+                        <p class="newsHeader"><span>{{ item.created_at|date:"d.m.Y" }}</span><a title="{{ item }}" href="{{ item.get_absolute_url }}">{{ item }}</a></p>
+                        <p class="brend_news">
+                            {{ item.preview|safe }}
+                            <a href="{{ item.get_absolute_url }}" title="{{ item }} - читать подробнее">подробнее...</a>
+                        </p>
+                    </div>
+                    {% endfor %}
+                    <br>
+                {%endblock%}
+                {% block page_h1_block %}<h1>{% block page_h1 %}Сборник стихов "Библиотека Поэзии"{% endblock %}</h1>{% endblock %}
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+        <div class="span-6 last">
+        </div>
+    </div>
+
+    <br/><br/>
+    {% comment %} <div class="breadcrumbs"> {% endcomment %}
+        {% comment %} {% block breadcrumbs_footer %}{% endblock %} {% endcomment %}
+    {% comment %} </div> {% endcomment %}
+    {% comment %} <br/><br/> {% endcomment %}
+
+    {% if not debug %}
+    {% comment %}
+    <script data-ad-client="ca-pub-6122322096877385" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- CenterBlock -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-6122322096877385"
+        data-ad-slot="2667403397"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    {% endcomment %}
+    {% endif %}
+
+</div>
+
+{% block extra_js %}{% endblock %}
+{% comment %}
+/*<![CDATA[*/
+jQuery(function($) {
+    jQuery('#yw0').yiiListView({'ajaxUpdate':[],'ajaxVar':'ajax','pagerClass':'pager','loadingClass':'list\x2Dview\x2Dloading','sorterClass':'sorter','enableHistory':false});
+    jQuery('#yw1').yiiListView({'ajaxUpdate':[],'ajaxVar':'ajax','pagerClass':'pager','loadingClass':'list\x2Dview\x2Dloading','sorterClass':'sorter','enableHistory':false});
+    jQuery('#yw2').yiiListView({'ajaxUpdate':['yw2'],'ajaxVar':'ajax','pagerClass':'pager','loadingClass':'list\x2Dview\x2Dloading','sorterClass':'sorter','enableHistory':false});
+});
+/*]]>*/
+{% endcomment %}
+</body>
+</html>
+{% endspaceless %}

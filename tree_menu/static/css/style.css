@@ -1,0 +1,429 @@
+* {font-size:14px;}
+body {
+    background: url(../images/fon.jpg) repeat;
+}
+
+#header
+{
+	margin: 0;
+	padding: 0;
+    height: 100px;
+	border-top: 0px solid #C9E0ED;
+}
+
+#logo
+{
+	padding: 0px 0 0 0px;
+    width: 260px;
+    height: 100px;
+    float:left;
+    
+}
+
+#search {
+    margin-left: 90px;
+    width: auto;
+    height: 100px;
+    background: url(../images/fon.png) 40px 0 repeat-x;
+}
+
+#search table {
+    border: 0px solid red;
+    height: 100px;
+    width: 700px;
+}
+
+#search input[type='text'] {
+    width: 400px;
+}
+
+#mainmenu {
+    background: none;
+    background-color: #0e509e;
+    border-right: 1px solid #DDDDDD;
+    border-left: 1px solid #DDDDDD;
+}
+
+#mainmenu ul li a:hover, #mainmenu ul li.active a {
+    border-top: 0px solid #CCCCCC;
+    border-bottom: 1px solid #333333;
+}
+
+
+#footer
+{
+	padding: 10px;
+	margin: 0;
+	font-size: 0.8em;
+	text-align: center;
+	border-top: 1px solid #C9E0ED;
+    background-color:  #0e509e;
+    color:#ffffff;
+    height: 50px;
+}
+
+#footer a {
+    color: #C9E0ED;
+}
+
+.container {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+div.onerow label { 
+    display: inline-block;
+}
+
+.portlet-decoration {
+    background: none repeat scroll 0 0 #0e509e;
+    border-left: 0px solid #6FACCF;
+    padding: 3px 8px;
+}
+
+.portlet-title {
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.portlet-content {
+    background: none repeat scroll 0 0 #EAEAEA;
+}
+
+.portlet-content li.active {
+    font-weight: bold;
+}
+
+.ui-menu-item {
+    text-align: left;
+}
+
+.authorCell {
+    width: 150px;
+    height: 46px;
+    float: left;
+}
+
+.avatarCell {
+    width: 80px;
+    height: 80px;
+    float: left;
+}
+
+.friendCell {
+    width: 200px;
+    height: 46px;
+}
+
+.friendCell div {
+    padding: 2px;
+    float: left;
+}
+
+.block {
+    border: 1px dotted #cbc1fe;
+    padding: 10px;
+    padding-bottom: 15px;
+    margin: 5px 0;
+}
+
+.date {
+    background-color: #FFF6BF;
+    padding: 10px;
+    width: 80px;
+    font-weight: bold;
+}
+
+.microdate {
+    padding: 3px;
+    width: 80px;
+    font-size: 8px;
+}
+
+
+.newsHeader {
+    padding: 3px;
+    color: grey;
+    font-size: 11px;
+}
+
+.newsHeader span {
+    color: green;
+}
+
+.ontop {
+    background-color: #EAEAEA;
+}
+
+.ontop .newsHeader {
+    color: red;
+}
+
+.ontop span {
+    color: #000;
+    font-weight: bold;
+}
+
+.welcome {
+    padding: 10px;
+    padding-bottom: 15px;
+    margin: 5px 0;
+}
+
+.welcome img {
+    float: right;
+}
+
+.accordeon {
+    font: normal 10px Arial,Helvetica,sans-serif;
+}
+
+.poemGroup {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.poemHeader {
+    padding: 4px;
+    margin-left: 10px;
+}
+
+.poemHeader div {
+    padding: 2px;
+    float: left;
+}
+
+.comHeader div {
+    padding: 2px;
+    float: left;
+}
+
+a.icon {
+    text-decoration: none;
+}
+
+a.icon_edit div {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(../images/ico.edit.png) no-repeat;
+}
+
+a.icon_remove div {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(../images/ico.remove.png) no-repeat;
+}
+
+a.icon_rup {
+    background: url(../images/ico.rup.png) no-repeat;
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+
+a.icon_rdn {
+    background: url(../images/ico.rdn.png) no-repeat;
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+
+div.icon_star {
+    background: url(../images/heart.png) no-repeat;
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+
+.comStars div {
+    float: right;
+    padding: 0;
+}
+
+.sysHeader {
+    background-color: #e8e8e8;
+    padding: 5px;
+}
+
+.userList {
+    padding-left: 20px;
+}
+
+.userComment {
+    padding: 5px;
+}
+
+.viewComment {
+    padding: 5px;
+    margin: 5px;
+}
+
+.maincom {
+    background-color: #f5f5ff;
+}
+
+.comText {
+    padding: 5px;
+}
+
+.borderRight {
+    border-right: 1px solid #DDDDDD;
+}
+
+.myHint {
+	color: #999;
+}
+
+.listTotal {
+    margin-top: 5px;
+    color: green;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+h1 {
+    color: teal;
+}
+
+h2 {
+    color: #0066A4;
+}
+
+.list-view .summary {
+    font-size: 10px;
+}
+
+.proflist td, .proflist th {
+    border-bottom: 1px dashed #CCCCCC;
+}
+
+table.profile {
+    margin: 0px;
+}
+
+table.profile td {
+    vertical-align: top;
+}
+
+div.icon_award {
+    background: url(../images/ico.award.png) no-repeat;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+div.award {
+    display: inline-block;
+    margin-left: 5px;
+    margin-bottom: 8px;
+    color: #cd0a0a;
+}
+
+div.button {
+    border: 1px solid #6FACCF;
+    display: inline-block;
+    float: left;
+    padding: 10px;
+    margin: 3px;
+}
+
+div.button a {
+    text-decoration: none;
+}
+
+
+div.button:hover {
+    background-color: #C9E0ED;
+}
+
+div.admbutton {
+    border: 1px solid #cd0a0a;
+    display: inline-block;
+    float: left;
+    padding: 5px;
+    margin: 3px;
+    width: 115px;
+}
+
+div.admbutton a {
+    text-decoration: none;
+    color: #8a1f11;
+}
+
+div.admbutton:hover {
+    background-color: #FFD324;
+}
+
+div.admblock {
+    border: 1px dotted #cd0a0a;
+    padding: 10px;
+    margin: 5px 0;
+    margin-bottom: 10px;
+    float: left;
+    width: 80%;
+}
+
+div.adminfo {
+    clear: left;
+}
+
+div.admparam {
+    float:left;
+    display: inline-block;
+    font-weight: bold;
+    padding: 3px;
+    width: 100px;
+}
+
+div.admvalue {
+    float:left;
+    display: inline-block;
+    padding: 3px;
+    margin-left: 101px;
+}
+
+.activeTopic {
+    font-weight: bold;
+}
+
+.msgList table {
+    border: 1px dotted #CCC;
+}
+
+.msgList table td {
+    border-top: 1px dashed #CCC;
+}
+
+.alert {
+    background-color: #FFF6BF;
+    padding: 8px;
+    border: 1px solid coral;
+    margin-bottom: 10px;
+}
+
+.alert p {
+    margin: 3px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+div.sampleLink {
+    background-color: #FFF6BF;
+    border: 1px solid #8a1f11;
+    padding: 10px;
+    margin: 0 100px;
+    text-align: center;
+}
+
+div.sampleLink div.lnk {
+    color: green;
+    font-weight: bold;
+}

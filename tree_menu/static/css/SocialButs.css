@@ -1,0 +1,56 @@
+.fb {
+    background: url("../images/i16x16_fb.gif") no-repeat scroll center center transparent;
+}
+
+.tw {
+    background: url("../images/i16x16_tw.gif") no-repeat scroll center center transparent;
+}
+
+.ggl {
+    background: url("../images/i16x16_ggl.gif") no-repeat scroll center center transparent;
+}
+
+.vk {
+    background: url("../images/i16x16_vk.gif") no-repeat scroll center center transparent;
+}
+
+.li {
+    background: url("../images/i16x16_li.gif") no-repeat scroll center center transparent;
+}
+
+.od {
+    background: url("../images/i16x16_od.gif") no-repeat scroll center center transparent;
+}
+
+.ya {
+    background: url("../images/i16x16_ya.gif") no-repeat scroll center center transparent;
+}
+
+.bl {
+    background: url("../images/i16x16_bl.gif") no-repeat scroll center center transparent;
+}
+
+.mm {
+    background: url("../images/i16x16_mm.gif") no-repeat scroll center center transparent;
+}
+
+.lj {
+    background: url("../images/i16x16_lj.gif") no-repeat scroll center center transparent;
+    border: 0 none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.ico {
+    display: inline-block;
+    line-height: 16px;
+    text-decoration: none;
+    text-indent: -999px;
+    width: 16px;
+}
+
+form.ico {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}

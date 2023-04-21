@@ -1,0 +1,124 @@
+{% extends 'default.html' %}
+
+{% block tag_title_full %}Библиотека Поэзии{% endblock %}
+{% block tag_description %}Главная страница - Библиотека Поэзии{% endblock %}
+{% block tag_keywords %}стихи стихотворение поэзия поэт поэтический лирика автор литература творчество сборник{% endblock %}
+
+{% block content %}
+<div class="welcome">
+    <h2>Опубликуйте стихи у нас!</h2>
+    <div><p class="brend">Библиотека Поэзии - сборник стихов, позволяющий всем поэтам, которые желают опубликовать своё творчество, разместить его в Библиотеке Поэзии.</p> 
+        <br><p class="brend">Мы публикуем любые стихи, от начинающих, до опытных поэтов. Мы стараемся, чтобы все опубликованные стихи могли получить критику, краткие рецензии и комментарии от других авторов, а поэты - смогли бы сформировать новые взгляды на современную поэзию и познакомиться с новыми людьми и их творчеством.</p> 
+        <br><p class="brend">Лучшие стихи Библиотеки Поэзии - не остаются незамеченными, и обязательно будут прочитаны большинством наших читателей - поклонников настоящей поэзии! Публикация стихов в Библиотеке Поэзии бесплатна - вам достаточно просто зарегистрироваться!</p> </div>
+    <div class="clear"></div>
+</div>
+
+<h3>Последние новости</h3>
+<div id="yw2" class="list-view">
+    <div class="items">
+        {% for item in news %}
+        <div class="view">
+            <p class="newsHeader"><span>{{ item.created_at|date:"d.m.Y" }}</span><a title="{{ item }}" href="{{ item.get_absolute_url }}">{{ item }}</a></p>
+            <p class="newsBody">{{ item.preview|safe }}
+            <a href="{{ item.get_absolute_url }}" title="{{ item }}">подробнее...</a></p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% if edition_publications|length > 0 %}
+<h3>Выбор редакции</h3>
+<div class="block">
+    <div class="items">
+        {% for item in edition_publications %}
+        <div class="poemHeader">
+            <a href="{{ item.get_absolute_url }}">{{ item.title }}</a> 
+            (<a href="{{ item.user.profile.get_absolute_url }}">{{ item.user.profile.nickname }}</a>)
+        </div>
+        {% endfor %}
+        <div class="poemHeader">
+            <br><a href="{% url 'poems:edition_top' %}">смотреть весь список</a> 
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% if popular_pulications|length > 0 %}
+<h3>Самые популярные стихи за неделю</h3>
+<div class="block">
+    <div class="items">
+        {% for item in popular_pulications %}
+        <div class="poemHeader">
+            <a href="{{ item.get_absolute_url }}">{{ item.title }}</a> 
+            (<a href="{{ item.user.profile.get_absolute_url }}">{{ item.user.profile.nickname }}</a>)
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% comment %}
+{% if new_comments|length > 0 %}
+<h3>Новые комментарии</h3>
+<div class="block">
+    <div class="items">
+        {% for item in new_comments %}
+        <div class="comHeader">
+            <div>{{ item.created_at|date:"d.m.Y H:i" }} <a href="{{ item.user.profile.get_absolute_url }}" title="{{ item.user.profile }}">{{ item.user.profile.nickname }}</a>,
+            произведение:
+                <a href="{{ item.publication.get_absolute_url }}#comment_{{ item.id }}">{{ item.publication.title }}</a>
+                (<a href="{{ item.publication.user.profile.get_absolute_url }}">{{ item.publication.user.profile.nickname }}</a>)
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="userComment">
+            {{ item.text|truncatechars:100 }}
+        </div>
+        {% if not forloop.last %}
+        <hr>{% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% if new_publications|length > 0 %}
+<h3>Новые произведения</h3>
+<div class="block">
+    <div class="items">
+        {% for item in new_publications %}
+        <div class="poemHeader">
+            {{ item.created_at|date:"d.m.Y H:i" }} <a title="{{ item.title }}" href="{{ item.get_absolute_url }}">{{ item.title }}</a>, 
+            автор: <a title="{{ item.user.profile.nickname }}" href="{{ item.user.profile.get_absolute_url }}">{{ item.user.profile.nickname }}</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+{% endcomment %}
+
+
+<h3>Поэты - участники проекта</h3>
+<div class="block">
+    <div id="yw1" class="list-view">
+        {% for item in project_users %}
+        <div class="avatarCell">
+            <a title="{{ item.nickname }}" href="{{ item.get_absolute_url }}">
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="clear"></div>
+</div>
+
+{% if request.user.is_superuser %}
+<br>
+<h2>Статистика проекта</h2>
+<div class="block">
+    <div>Всего авторов: {{ counters.users }}<br>
+   Всего стихов: {{ counters.publications }}<br>
+   Всего рецензий: {{ counters.comments }}<br>
+   </div>
+</div>
+{% endif %}
+
+{% endblock %}
